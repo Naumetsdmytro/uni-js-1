@@ -1,12 +1,9 @@
-const helloSpeaker = (function () {
+(function () {
     const speakWord = "Hello";
   
-    function speak(name) {
+    function speek(name) {
       console.log(speakWord + " " + name);
     }
   
-    return {
-      speak
-    };
+    window.speekHello = speek;
   })();
-  

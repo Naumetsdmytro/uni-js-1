@@ -1,22 +1,33 @@
-(function () {
-    const names = ["Bill", "John", "Jen", "Jason", "Paul", "Frank", "Steven", "Larry", "Paula", "Laura", "Jim"];
+let names = [
+    "Bill",
+    "John",
+    "Jen",
+    "Jason",
+    "Paul",
+    "Frank",
+    "Steven",
+    "Larry",
+    "Paula",
+    "Laura",
+    "Jim",
+  ];
   
-    for (let i = 0; i < names.length; i++) {
-      const firstLetter = names[i].charAt(0).toLowerCase();
+  for (let name of names) {
+    const firstChar = name.charAt(0).toLowerCase();
+    firstChar === "j" ? speekGoodBye(name) : speekHello(name);
+  }
+  console.log("------")
   
-      if (firstLetter === 'j') {
-        goodbyeSpeaker.speak(names[i]);
-      } else {
-        helloSpeaker.speak(names[i]);
-      }
-    }
+  const threshold = 95;
   
-    console.log("\nAdditional selection: Names with an even number of letters");
+  console.log("ASCII:");
   
-    for (let i = 0; i < names.length; i++) {
-      if (names[i].length % 2 === 0) {
-        console.log(names[i]);
-      }
-    }
-  })();
+  for (let name of names) {
+    const asciiLastLetter = name
+      .charAt(name.length - 1)
+      .toLowerCase()
+      .charCodeAt(0);
+    console.log(`${name} (ASCII last letter: ${asciiSum})`);
   
+    asciiLastLetter > threshold ? speekHello(name) : speekGoodBye(name);
+  }
