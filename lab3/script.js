@@ -27,7 +27,7 @@ let names = [
       .charAt(name.length - 1)
       .toLowerCase()
       .charCodeAt(0);
-    console.log(`${name} (ASCII last letter: ${asciiSum})`);
+    console.log(`${name} (ASCII last letter: ${asciiLastLetter})`);
   
     asciiLastLetter > threshold ? speekHello(name) : speekGoodBye(name);
   }
