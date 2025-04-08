@@ -167,13 +167,13 @@ const SORTING_ALGORITHMS = {
     Math.random() > 0.2 ? Math.floor(Math.random() * 1000) : undefined
   );
   
-  // Набір алгоритмів
+  // Набір алгоритмів з прив’язкою this
   const techniques = [
-    ["Bubble Sort", SORTING_ALGORITHMS.bubbleSort],
-    ["Selection Sort", SORTING_ALGORITHMS.selectSort],
-    ["Insertion Sort", SORTING_ALGORITHMS.insertSort],
-    ["Shell Sort", SORTING_ALGORITHMS.shellSortAlgo],
-    ["Quick Sort", SORTING_ALGORITHMS.quickSortAlgo],
+    ["Bubble Sort", SORTING_ALGORITHMS.bubbleSort.bind(SORTING_ALGORITHMS)],
+    ["Selection Sort", SORTING_ALGORITHMS.selectSort.bind(SORTING_ALGORITHMS)],
+    ["Insertion Sort", SORTING_ALGORITHMS.insertSort.bind(SORTING_ALGORITHMS)],
+    ["Shell Sort", SORTING_ALGORITHMS.shellSortAlgo.bind(SORTING_ALGORITHMS)],
+    ["Quick Sort", SORTING_ALGORITHMS.quickSortAlgo.bind(SORTING_ALGORITHMS)],
   ];
   
   // Тест звичайного масиву
