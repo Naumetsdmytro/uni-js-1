@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.menu-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    /* display: none; */
+}
+
+.menu-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.menu-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.menu-container select {
+    padding: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.startButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.startButton:hover {
+    background-color: #0056b3;
+}

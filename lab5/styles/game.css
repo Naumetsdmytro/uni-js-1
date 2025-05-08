@@ -1,0 +1,54 @@
+
+.game-container {
+    all: unset;
+    display: contents;
+    display: none;
+}
+
+.score-board {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border-top: 2px solid #ddd;
+    padding: 10px 0;
+}
+
+.game-map {
+    flex: 1;
+    background-color: #e0e0e0;
+    margin: 20px 0;
+    border: 2px solid #ccc;
+}
+
+.game-over {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.game-over h1 {
+    font-size: 2rem;
+    color: #d9534f;
+}
+
+.game-over p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.restartButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restartButton:hover {
+    background-color: #218838;
+}
