@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/game.css">
+    <link rel="stylesheet" href="./styles/menu.css">
+</head>
+
+<body>
+    <div class="menu-container">
+        <h1>Welcome to the game!!!</h1>
+        <label for="difficulty">Choose difficulty:</label>
+        <select name="difficulty" id="difficulty">
+            <option value="easy">Litle child</option>
+            <option value="normal">Average player</option>
+            <option value="hard">F1 driver</option>
+        </select>
+        <label for="color">Choose color</label>
+        <select name="difficulty" id="color">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+        </select>
+        <button type="submit" class="startButton">start</button>
+    </div>
+
+    <div class="game-container">
+        <div class="game-map"></div>
+        <div class="score-board">
+            <h2>Score: <span id="score"></span></h2>
+            <h2>Time: <span id="time"></span></h2>
+        </div>
+    </div>
+
+    <div class="game-over">
+        <h1>Game Over</h1>
+        <p>Your score: <span id="final-score">0</span></p>
+        <button class="restartButton">Restart</button>
+    </div>
+
+
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
