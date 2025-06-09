@@ -1,121 +1,151 @@
-document.addEventListener('DOMContentLoaded', () => {
-    initMobileMenu();
-    
-    initCarousel();
-});
-
-function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const mobileNav = document.querySelector('.mobile-nav');
-    
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-    });
-}
-
-function initCarousel() {
-    const carousel = document.querySelector('.carousel');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevBtn = document.querySelector('.carousel-control.prev');
-    const nextBtn = document.querySelector('.carousel-control.next');
-    const indicatorsContainer = document.querySelector('.carousel-indicators');
-    
-    let currentSlide = 0;
-    let autoplayInterval;
-    const slideDuration = 5000;
-    
-    slides.forEach((_, index) => {
-        const indicator = document.createElement('div');
-        indicator.classList.add('carousel-indicator');
-        if (index === 0) indicator.classList.add('active');
+class CarouselManager {
+    constructor() {
+        this.carousel = document.querySelector('.carousel');
+        this.slides = document.querySelectorAll('.carousel-slide');
+        this.prevBtn = document.querySelector('.carousel-control.prev');
+        this.nextBtn = document.querySelector('.carousel-control.next');
+        this.indicatorsContainer = document.querySelector('.carousel-indicators');
+        this.carouselContainer = document.querySelector('.carousel-container');
         
-        indicator.addEventListener('click', () => {
-            goToSlide(index);
+        this.currentSlide = 0;
+        this.autoplayInterval = null;
+        this.slideDuration = 5000;
+        this.isTransitioning = false;
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+        
+        this.init();
+    }
+    
+    init() {
+        this.createIndicators();
+        this.setupEventListeners();
+        this.startAutoplay();
+    }
+    
+    createIndicators() {
+        this.slides.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.classList.add('carousel-indicator');
+            if (index === 0) indicator.classList.add('active');
+            
+            indicator.addEventListener('click', () => {
+                this.goToSlide(index);
+            });
+            
+            this.indicatorsContainer.appendChild(indicator);
         });
         
-        indicatorsContainer.appendChild(indicator);
-    });
+        this.indicators = document.querySelectorAll('.carousel-indicator');
+    }
     
-    const indicators = document.querySelectorAll('.carousel-indicator');
+    setupEventListeners() {
+        this.prevBtn.addEventListener('click', () => this.goToSlide(this.currentSlide - 1));
+        this.nextBtn.addEventListener('click', () => this.goToSlide(this.currentSlide + 1));
+        
+        this.carouselContainer.addEventListener('mouseenter', () => this.pauseAutoplay());
+        this.carouselContainer.addEventListener('mouseleave', () => this.startAutoplay());
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                this.goToSlide(this.currentSlide - 1);
+            } else if (e.key === 'ArrowRight') {
+                this.goToSlide(this.currentSlide + 1);
+            }
+        });
+        
+        this.setupTouchEvents();
+    }
     
-    function goToSlide(slideIndex) {
-        slides[currentSlide].classList.remove('active');
-        indicators[currentSlide].classList.remove('active');
+    setupTouchEvents() {
+        this.carouselContainer.addEventListener('touchstart', (e) => {
+            this.touchStartX = e.changedTouches[0].screenX;
+        });
         
-        currentSlide = slideIndex;
+        this.carouselContainer.addEventListener('touchend', (e) => {
+            this.touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipe();
+        });
+    }
+    
+    goToSlide(slideIndex) {
+        if (this.isTransitioning) return;
+        this.isTransitioning = true;
         
-        if (currentSlide < 0) {
-            currentSlide = slides.length - 1;
-        } else if (currentSlide >= slides.length) {
-            currentSlide = 0;
+        this.slides[this.currentSlide].classList.remove('active');
+        this.indicators[this.currentSlide].classList.remove('active');
+        
+        this.currentSlide = slideIndex;
+        
+        if (this.currentSlide < 0) {
+            this.currentSlide = this.slides.length - 1;
+        } else if (this.currentSlide >= this.slides.length) {
+            this.currentSlide = 0;
         }
         
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
+        this.slides[this.currentSlide].classList.add('active');
+        this.indicators[this.currentSlide].classList.add('active');
         
-        carousel.style.transform = `translateX(-${currentSlide * 20}%)`;
+        this.carousel.style.transform = `translateX(-${this.currentSlide * 20}%)`;
         
-        resetAutoplay();
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 500);
+        
+        this.resetAutoplay();
     }
     
-    prevBtn.addEventListener('click', () => {
-        goToSlide(currentSlide - 1);
-    });
-    
-    nextBtn.addEventListener('click', () => {
-        goToSlide(currentSlide + 1);
-    });
-    
-    function startAutoplay() {
-        autoplayInterval = setInterval(() => {
-            goToSlide(currentSlide + 1);
-        }, slideDuration);
+    startAutoplay() {
+        this.autoplayInterval = setInterval(() => {
+            this.goToSlide(this.currentSlide + 1);
+        }, this.slideDuration);
     }
     
-    function resetAutoplay() {
-        clearInterval(autoplayInterval);
-        startAutoplay();
+    pauseAutoplay() {
+        clearInterval(this.autoplayInterval);
     }
     
-    startAutoplay();
+    resetAutoplay() {
+        this.pauseAutoplay();
+        this.startAutoplay();
+    }
     
-    const carouselContainer = document.querySelector('.carousel-container');
-    
-    carouselContainer.addEventListener('mouseenter', () => {
-        clearInterval(autoplayInterval);
-    });
-    
-    carouselContainer.addEventListener('mouseleave', () => {
-        startAutoplay();
-    });
-    
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            goToSlide(currentSlide - 1);
-        } else if (e.key === 'ArrowRight') {
-            goToSlide(currentSlide + 1);
-        }
-    });
-    
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    carouselContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-    
-    carouselContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-    
-    function handleSwipe() {
+    handleSwipe() {
         const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-            goToSlide(currentSlide + 1);
-        } else if (touchEndX > touchStartX + swipeThreshold) {
-            goToSlide(currentSlide - 1);
+        if (this.touchEndX < this.touchStartX - swipeThreshold) {
+            this.goToSlide(this.currentSlide + 1);
+        } else if (this.touchEndX > this.touchStartX + swipeThreshold) {
+            this.goToSlide(this.currentSlide - 1);
         }
     }
-} 
+}
+
+class MobileMenuManager {
+    constructor() {
+        this.hamburger = document.querySelector('.hamburger');
+        this.mobileNav = document.querySelector('.mobile-nav');
+        this.init();
+    }
+    
+    init() {
+        this.hamburger.addEventListener('click', () => this.toggleMenu());
+        document.addEventListener('click', (e) => this.handleOutsideClick(e));
+    }
+    
+    toggleMenu() {
+        this.hamburger.classList.toggle('active');
+        this.mobileNav.classList.toggle('active');
+    }
+    
+    handleOutsideClick(e) {
+        if (!this.mobileNav.contains(e.target) && !this.hamburger.contains(e.target)) {
+            this.hamburger.classList.remove('active');
+            this.mobileNav.classList.remove('active');
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new MobileMenuManager();
+    new CarouselManager();
+}); 
