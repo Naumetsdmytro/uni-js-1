@@ -1,121 +1,127 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const homeContent = document.getElementById('home-content');
-    const categoriesContent = document.getElementById('categories-content');
-    const categoryItemsContent = document.getElementById('category-items-content');
-    const categoriesList = document.getElementById('categories-list');
-    const categoryTitle = document.getElementById('category-title');
-    const categoryItems = document.getElementById('category-items');
-    const homeLink = document.getElementById('home-link');
-    const catalogLink = document.getElementById('catalog-link');
-    const backToCategoriesBtn = document.getElementById('back-to-categories');
-    
-    homeLink.addEventListener('click', showHome);
-    catalogLink.addEventListener('click', showCategories);
-    backToCategoriesBtn.addEventListener('click', showCategories);
-    
-    function showSection(activeSection) {
-        homeContent.classList.add('hidden');
-        categoriesContent.classList.add('hidden');
-        categoryItemsContent.classList.add('hidden');
+class AppController {
+    constructor() {
+        this.homeContent = document.getElementById('home-content');
+        this.categoriesContent = document.getElementById('categories-content');
+        this.categoryItemsContent = document.getElementById('category-items-content');
+        this.categoriesList = document.getElementById('categories-list');
+        this.categoryTitle = document.getElementById('category-title');
+        this.categoryItems = document.getElementById('category-items');
+        this.homeLink = document.getElementById('home-link');
+        this.catalogLink = document.getElementById('catalog-link');
+        this.backToCategoriesBtn = document.getElementById('back-to-categories');
         
-        homeContent.classList.remove('active');
-        categoriesContent.classList.remove('active');
-        categoryItemsContent.classList.remove('active');
+        this.initializeEventListeners();
+    }
+
+    initializeEventListeners() {
+        this.homeLink.addEventListener('click', (e) => this.showHome(e));
+        this.catalogLink.addEventListener('click', (e) => this.showCategories(e));
+        this.backToCategoriesBtn.addEventListener('click', (e) => this.showCategories(e));
+    }
+    
+    showSection(activeSection) {
+        [this.homeContent, this.categoriesContent, this.categoryItemsContent].forEach(section => {
+            section.classList.add('hidden');
+            section.classList.remove('active');
+        });
         
         activeSection.classList.remove('hidden');
         activeSection.classList.add('active');
     }
     
-    function showHome(e) {
+    showHome(e) {
         if (e) e.preventDefault();
-        showSection(homeContent);
+        this.showSection(this.homeContent);
     }
 
-    function showCategories(e) {
+    showCategories(e) {
         if (e) e.preventDefault();
-        showSection(categoriesContent);
+        this.showSection(this.categoriesContent);
         
-        if (categoriesList.children.length === 0) {
-            loadCategories();
+        if (this.categoriesList.children.length === 0) {
+            this.loadCategories();
         }
     }
 
-    function showCategoryItems(categoryShortname, categoryName) {
-        showSection(categoryItemsContent);
-        categoryTitle.textContent = categoryName;
-        loadCategoryItems(categoryShortname);
+    showCategoryItems(categoryShortname, categoryName) {
+        this.showSection(this.categoryItemsContent);
+        this.categoryTitle.textContent = categoryName;
+        this.loadCategoryItems(categoryShortname);
     }
     
-    async function loadCategories() {
+    async loadCategories() {
         const categories = await DataService.loadCategories();
         
         if (categories.length > 0) {
-            displayCategories(categories);
+            this.displayCategories(categories);
             
-            addSpecialCategory({
+            this.addSpecialCategory({
                 id: 'specials',
                 name: 'Specials',
                 shortname: 'specials',
                 notes: 'Special offers with random categories'
             });
         } else {
-            categoriesList.innerHTML = '<p>Error loading categories</p>';
+            this.categoriesList.innerHTML = '<p>Error loading categories</p>';
         }
     }
 
-    async function loadCategoryItems(categoryShortname) {
+    async loadCategoryItems(categoryShortname) {
         const items = await DataService.loadCategoryItems(categoryShortname);
         
         if (items.length > 0) {
-            displayCategoryItems(items);
+            this.displayCategoryItems(items);
         } else {
-            categoryItems.innerHTML = '<p>Error loading items</p>';
+            this.categoryItems.innerHTML = '<p>Error loading items</p>';
         }
     }
 
-    function displayCategories(categories) {
-        categoriesList.innerHTML = '';
+    displayCategories(categories) {
+        this.categoriesList.innerHTML = '';
         
         categories.forEach(category => {
-            const card = createCategoryCard(category.name, category.notes);
+            const card = this.createCategoryCard(category.name, category.notes);
             
             card.addEventListener('click', () => {
-                showCategoryItems(category.shortname, category.name);
+                this.showCategoryItems(category.shortname, category.name);
             });
             
-            categoriesList.appendChild(card);
+            this.categoriesList.appendChild(card);
         });
     }
 
-    function addSpecialCategory(category) {
-        const card = createCategoryCard(category.name, category.notes);
+    addSpecialCategory(category) {
+        const card = this.createCategoryCard(category.name, category.notes);
         
         card.addEventListener('click', async () => {
             const randomCategory = await DataService.getRandomCategory();
             
             if (randomCategory) {
-                showCategoryItems(
+                this.showCategoryItems(
                     randomCategory.shortname, 
                     'Specials: ' + randomCategory.name
                 );
             }
         });
         
-        categoriesList.appendChild(card);
+        this.categoriesList.appendChild(card);
     }
 
-    function createCategoryCard(title, description) {
+    createCategoryCard(title, description) {
         const card = document.createElement('div');
         card.className = 'category-card';
         card.innerHTML = `
-            <h2>${title}</h2>
-            <p>${description}</p>
+            <div class="card-content">
+                <h2>${title}</h2>
+                <p>${description}</p>
+                <span class="card-hover-effect">Click to view items</span>
+            </div>
         `;
         return card;
     }
 
-    function displayCategoryItems(items) {
-        categoryItems.innerHTML = '';
+    displayCategoryItems(items) {
+        this.categoryItems.innerHTML = '';
         
         items.forEach(item => {
             const imageUrl = item.image || `https://place-hold.it/200x200?text=${item.shortname}`;
@@ -123,15 +129,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const itemCard = document.createElement('div');
             itemCard.className = 'item-card';
             itemCard.innerHTML = `
-                <img src="${imageUrl}" alt="${item.name}">
-                <h3>${item.name}</h3>
-                <p>${item.description}</p>
-                <p class="item-price">${item.price}</p>
+                <div class="item-image">
+                    <img src="${imageUrl}" alt="${item.name}" loading="lazy">
+                </div>
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <p class="item-price">${item.price}</p>
+                </div>
             `;
             
-            categoryItems.appendChild(itemCard);
+            this.categoryItems.appendChild(itemCard);
         });
     }
-    
-    showHome();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const app = new AppController();
+    app.showHome();
 }); 
