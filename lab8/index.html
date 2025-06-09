@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8 - JavaScript Visual Effects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-nav-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide active">
+                        <img src="https://place-hold.it/800x400/blue/white&text=Slide1" alt="Slide 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://place-hold.it/800x400/green/white&text=Slide2" alt="Slide 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://place-hold.it/800x400/red/white&text=Slide3" alt="Slide 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://place-hold.it/800x400/purple/white&text=Slide4" alt="Slide 4">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://place-hold.it/800x400/orange/white&text=Slide5" alt="Slide 5">
+                    </div>
+                </div>
+                <button class="carousel-control prev" aria-label="Previous slide">&lt;</button>
+                <button class="carousel-control next" aria-label="Next slide">&gt;</button>
+                <div class="carousel-indicators"></div>
+            </div>
+        </section>
+
+        <section class="large-devices-section">
+            <h2>Content for Large Devices</h2>
+            <div class="large-images">
+                <img src="https://place-hold.it/400x300/green/white&text=Large1" alt="Large Device Image 1">
+                <img src="https://place-hold.it/400x300/green/white&text=Large2" alt="Large Device Image 2">
+                <img src="https://place-hold.it/400x300/green/white&text=Large3" alt="Large Device Image 3">
+            </div>
+        </section>
+
+        <section class="medium-devices-section">
+            <h2>Content for Medium Devices</h2>
+            <div class="medium-images">
+                <img src="https://place-hold.it/300x200/green/white&text=Medium1" alt="Medium Device Image 1">
+                <img src="https://place-hold.it/300x200/green/white&text=Medium2" alt="Medium Device Image 2">
+                <img src="https://place-hold.it/300x200/green/white&text=Medium3" alt="Medium Device Image 3">
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html> 

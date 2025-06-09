@@ -1,0 +1,35 @@
+[
+  {
+    "id": "t1",
+    "name": "Lightweight Backpack",
+    "shortname": "backpack",
+    "description": "Ultra-light yet durable travel backpack with multiple compartments, waterproof material, and padded laptop sleeve.",
+    "price": "$79.99",
+    "image": "https://pixabay.com/get/ga85df7f806f6915a3553d73fcb4991e84f483d06efc3c3b29bff43066db25d6b22ec5a2b91011c5fe5ae4f483a8ba444f2ad2212a8c7e50e2c8f799a892191bf_640.jpg"
+  },
+
+  {
+    "id": "t4",
+    "name": "Portable Water Filter",
+    "shortname": "waterfilter",
+    "description": "Compact water filter bottle that removes 99.9% of waterborne pathogens. Essential for hiking and international travel.",
+    "price": "$45.99",
+    "image": "https://pixabay.com/get/ge43effc3c70c632de644c8a805ebb41a20e17f06e0beccf3711e448fd6bff40fc31e151fdaef45d054d5430d10be27e1cdbce38861e97dc682ccd54339225d32_1280.jpg"
+  },
+  {
+    "id": "t6",
+    "name": "Compact Camera",
+    "shortname": "camera",
+    "description": "Lightweight travel camera with 20MP sensor, 30x optical zoom, and 4K video recording. Capture your adventures in style.",
+    "price": "$349.99",
+    "image": "https://pixabay.com/get/g3848052e7cc122eedefd1742d2adbd6bb8ac746b1e80378d0c00251a9cdd0ba21db9615921b72e4e9b7c5d5c01fb5b4e_640.jpg"
+  },
+  {
+    "id": "t7",
+    "name": "Digital Luggage Scale",
+    "shortname": "luggagescale",
+    "description": "Portable digital luggage scale with 110lb capacity. Avoid overweight baggage fees with this compact travel essential.",
+    "price": "$15.99",
+    "image": "https://pixabay.com/get/g237d0ec84f3bff67afa97f1e0cb45abbc80c8414c33a8fa05116f98a0e40e12c56599899b31bc53717b824833a827065_640.jpg"
+  }
+] 

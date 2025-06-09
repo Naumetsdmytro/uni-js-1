@@ -1,0 +1,50 @@
+[
+  {
+    "id": "f1",
+    "name": "Artisan Olive Oil",
+    "shortname": "oliveoil",
+    "description": "Premium cold-pressed extra virgin olive oil from Mediterranean groves. Rich taste with fruity undertones.",
+    "price": "$24.99",
+    "image": "https://pixabay.com/get/g3e7532abeef8ee2dc19da6aa32a93abd73aec67f53a1cd4c49ec4b621307a6b7731a2a0af19c14ad25cfbfd80d25bf2e6fc4f7f15f57a9dc1eb2577cf6f28a2e_640.jpg"
+  },
+  {
+    "id": "f2",
+    "name": "Specialty Coffee Beans",
+    "shortname": "coffee",
+    "description": "Single-origin gourmet coffee beans, medium roast with notes of chocolate and berries. Ethically sourced.",
+    "price": "$18.99",
+    "image": "https://pixabay.com/get/g58b0af7f82d7cfbe98be7db92c41d20c78c21e23f2c8c19ae8da65b95d1dd7c4c0b8b90a7e97267511c8633fb42eedac_640.jpg"
+  },
+  {
+    "id": "f3",
+    "name": "Gourmet Chocolate Box",
+    "shortname": "chocolate",
+    "description": "Assorted handcrafted chocolates with unique flavors including sea salt caramel, raspberry, and hazelnut praline.",
+    "price": "$34.99",
+    "image": "https://pixabay.com/get/g1b4842d10bb3edc9ba5ea3a14de6a8a6c15e45f1ce9e5e49c31b23cb2ee00e4e6e3da7e55d1b887d5a58ba05f5ec12fb_640.jpg"
+  },
+  {
+    "id": "f4",
+    "name": "Aged Balsamic Vinegar",
+    "shortname": "vinegar",
+    "description": "12-year aged balsamic vinegar from Modena, Italy. Perfect for salads, marinades, or drizzling over cheese.",
+    "price": "$29.99",
+    "image": "https://pixabay.com/get/ga15b8ce63a5e8c2ac1c9c2c6dd59272d1c9c50a51a2b64a45f8ca33607c05a60c78de41a538c17fcb4c37c9d2fd32e27_640.jpg"
+  },
+  {
+    "id": "f5",
+    "name": "Craft Beer Selection",
+    "shortname": "beer",
+    "description": "Six-pack of award-winning craft beers including IPA, stout, and wheat beer from small independent breweries.",
+    "price": "$19.99",
+    "image": "https://pixabay.com/get/gf40f0e95a41c0a6cca5dd5fc68dc22dc4eabb8cc8cfec5c1ae358b29ab0b6a02cc57b80ff9eb5db3e9ffc2a80e7f7afb_640.jpg"
+  },
+  {
+    "id": "f6",
+    "name": "Artisanal Cheese Set",
+    "shortname": "cheese",
+    "description": "Selection of four premium cheeses including aged cheddar, blue cheese, goat cheese, and brie with crackers.",
+    "price": "$42.99",
+    "image": "https://pixabay.com/get/gf76b0fcad77b35a1ced03b9aa6dbf49d9b6d1fdfb15a10a2c0e51ae25f73ac6f2577ae95edeae9978fe0b45e66c88323_640.jpg"
+  }
+] 

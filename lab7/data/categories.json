@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Electronics",
+    "shortname": "electronics",
+    "notes": "Latest electronic gadgets and devices for your tech needs"
+  },
+  {
+    "id": 2,
+    "name": "Clothing",
+    "shortname": "clothing",
+    "notes": "Trendy fashion items for all seasons"
+  },
+  {
+    "id": 3,
+    "name": "Sports",
+    "shortname": "sports",
+    "notes": "Equipment and accessories for all types of sports"
+  },
+  {
+    "id": 4,
+    "name": "Travel",
+    "shortname": "travel",
+    "notes": "Accessories and essentials for your next adventure"
+  }
+] 

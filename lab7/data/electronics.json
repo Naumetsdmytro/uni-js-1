@@ -1,0 +1,42 @@
+[
+  {
+    "id": "e1",
+    "name": "Smartphone",
+    "shortname": "smartphone",
+    "description": "Latest smartphone with high-resolution camera, fast processor, and long battery life. Perfect for photography enthusiasts and power users.",
+    "price": "$899.99",
+    "image": "https://pixabay.com/get/g3d4cb0af416ad6062e78a88874fb80314b64c46703cc2980b9fe64938a08d681868f0a84659f09d5e9dcc2e498ec4eb9950ee8e6daab6388f183c8bd0c9a283c_1280.jpg"
+  },
+  {
+    "id": "e2",
+    "name": "Laptop",
+    "shortname": "laptop",
+    "description": "Lightweight laptop with powerful performance, bright display, and excellent battery life. Ideal for work and entertainment.",
+    "price": "$1299.99",
+    "image": "https://pixabay.com/get/ga155af530da197a4dabcb10106a278581004f15bc332273ec9eb6962b8f84c8a464f3c1f562b06d9446e0836b4d232b367da6a29423a899c45102f6ef2c594d5_1280.jpg"
+  },
+  {
+    "id": "e3",
+    "name": "Wireless Headphones",
+    "shortname": "headphones",
+    "description": "Premium noise-cancelling wireless headphones with exceptional sound quality and comfort for all-day listening.",
+    "price": "$249.99",
+    "image": "https://pixabay.com/get/g1ab2a2aec1a697649c1eaba66b981bf206ff311214a7ba97416654398d60da194841772f68ae3ee15149a9a4b1ff1d824e0b8d0b993fe9bdc3085111dac751e0_1280.jpg"
+  },
+  {
+    "id": "e4",
+    "name": "Smart Watch",
+    "shortname": "smartwatch",
+    "description": "Feature-packed smartwatch with health tracking, notifications, and water resistance. Stay connected and monitor your fitness goals.",
+    "price": "$349.99",
+    "image": "https://pixabay.com/get/g344bebfecdf7599fbcba343e3a2f81d513322e8b04628d4a4dfce60bc0f022bbf8010066b8eb5b1dbbc516286a9cb289382a4ba41ecc52740ec75d6d6ab4bf5d_1280.jpg"
+  },
+  {
+    "id": "e5",
+    "name": "Bluetooth Speaker",
+    "shortname": "speaker",
+    "description": "Portable Bluetooth speaker with incredible sound, waterproof design, and long battery life. Perfect for parties and outdoor activities.",
+    "price": "$129.99",
+    "image": "https://pixabay.com/get/gcfa1d29d6a7cedb54c4fd4878d0cffb56c3fdbdf882a837d532124b25fbcdfac75ff3a3d00e694425fb086c06b0ddbda10fd4b1cf4a3d1261f3051f77648cde8_1280.jpg"
+  }
+] 

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "c1",
+    "name": "T-Shirt",
+    "shortname": "tshirt",
+    "description": "Comfortable 100% cotton t-shirt in various colors. Perfect for everyday wear with a relaxed fit and soft fabric.",
+    "price": "$19.99",
+    "image": "https://pixabay.com/get/g71f2f974426679f2ff73b1892d675415a70fcfe7be2e6623f03b90ce56051dd7c30e51690dbcfc120af2b064642be90c324257a2c8645b361892b904511f8061_1280.jpg"
+  },
+  {
+    "id": "c2",
+    "name": "Denim Jeans",
+    "shortname": "jeans",
+    "description": "Premium denim jeans with perfect fit and durability. Modern style that goes well with any casual outfit.",
+    "price": "$59.99",
+    "image": "https://pixabay.com/get/gffd2b6ed1979e2f0b6b37503aeee91da469b815a3557b8494418caca19fc15dc5e09e78ebb09db985a719c6264da0a3ba47137d73125d5f6b5a0f748b25aa920_640.jpg"
+  },
+  {
+    "id": "c3",
+    "name": "Winter Jacket",
+    "shortname": "jacket",
+    "description": "Warm winter jacket with water-resistant outer shell and cozy insulation. Stay comfortable in cold weather conditions.",
+    "price": "$129.99",
+    "image": "https://pixabay.com/get/gb8e24ee4350c8a35343af85a0340009913b0cab8280007c1cfc2db7a48fd12f82d42226fc21c1720423870437640353bfaded935e665eebdd7e5b1b10d338986_640.jpg"
+  },
+  {
+    "id": "c4",
+    "name": "Running Shoes",
+    "shortname": "shoes",
+    "description": "Lightweight running shoes with cushioned soles and breathable mesh. Designed for comfort and performance on any terrain.",
+    "price": "$89.99",
+    "image": "https://pixabay.com/get/g66cba09253a4e2d84af438c550acd19566f09d5487af2f8c04d23d560ce37b3762ba15fa5918bc1cc73fdd32d2b41046a35c26637ffc1886d5922d006bc111bd_640.jpg"
+  },
+  {
+    "id": "c5",
+    "name": "Summer Dress",
+    "shortname": "dress",
+    "description": "Flowy summer dress in vibrant patterns. Perfect for warm days with its breathable fabric and stylish design.",
+    "price": "$49.99",
+    "image": "https://pixabay.com/get/g4b05199a9f1bcf825609c20277b5b47fb9ef0b954e6eb5d4d98091f7cafd6875f89a5b9272ea39f4bc061d09cbd0f5a23f46612ddfc8945e1b9e8ab44d05c6f7_640.jpg"
+  }
+] 

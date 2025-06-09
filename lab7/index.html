@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Catalog</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" id="home-link">Home</a></li>
+                <li><a href="#" id="catalog-link">Catalog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div id="home-content" class="active">
+            <h1>Welcome to our Online Catalog</h1>
+            <p>Click on "Catalog" to view our product categories.</p>
+        </div>
+        
+        <div id="categories-content" class="hidden">
+            <h1>Product Categories</h1>
+            <div id="categories-list">
+            </div>
+        </div>
+        
+        <div id="category-items-content" class="hidden">
+            <h1 id="category-title"></h1>
+            <div id="category-items">
+            </div>
+            <button id="back-to-categories">Back to Categories</button>
+        </div>
+    </main>
+
+    <script src="js/dataService.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "s1",
+    "name": "Basketball",
+    "shortname": "basketball",
+    "description": "Professional-grade basketball with superior grip and durability. Perfect for indoor and outdoor courts.",
+    "price": "$49.99",
+    "image": "https://pixabay.com/get/ga3b89c1408087d84663b255a17c08a00f77a60eb34e6f124f0cbd0a1ab04da0501b9f897c22ce3a14e15e53d4adaf769e215519b6535b1955d729bb17efe2ae9_640.jpg"
+  },
+  {
+    "id": "s2",
+    "name": "Goofie Shoes",
+    "shortname": "shoes",
+    "description": "Lightweight running shoes with advanced cushioning and breathable mesh. Designed for long-distance running.",
+    "price": "$129.99",
+    "image": "https://pixabay.com/get/g9ddfc4040d9cd8dde5860450665116806ce65b7346e48a4235c742143bc6b6f7b64ffb7119f66152a196162dfd795bd72147b851e3a90f51c6b8edd4782f3c1e_640.jpg"
+  },
+  {
+    "id": "s3",
+    "name": "Fitness Tracker",
+    "shortname": "tracker",
+    "description": "Advanced fitness tracker with heart rate monitoring, GPS, and water resistance. Track your workouts with precision.",
+    "price": "$89.99",
+    "image": "https://pixabay.com/get/gfc6ab3fb7f334cb7ebb2791462c9871bb737c77a88a09366555d3a0bf0d14af9db957fa4483e503050a65e2509ddb6138bd01ab17fbb195dcdee1a1335698fca_640.jpg"
+  },
+  {
+    "id": "s4",
+    "name": "Yoga Mat",
+    "shortname": "yogamat",
+    "description": "Premium non-slip yoga mat with perfect cushioning and alignment lines. Eco-friendly and durable.",
+    "price": "$39.99",
+    "image": "https://pixabay.com/get/g42a2fd742c7f5279f21875092ff30a324678f6cac8fa66ac073a95fb5c50905823b9fa1db8dbf6ddb96e3fc19bc4f6278eecd6dc053ffe541a5f94a9890a226b_640.jpg"
+  },
+  {
+    "id": "s5",
+    "name": "Tennis Racket",
+    "shortname": "tennis",
+    "description": "Professional tennis racket with carbon fiber frame and optimized string pattern for control and power.",
+    "price": "$159.99",
+    "image": "https://pixabay.com/get/g3d2534d04eea3aedc4ed1d1a7c8c85c60eacd36e20f08a7a4cd07c89de67f06e2278f960a71ffa501569a02ac9fd244402bef0f25879057455a6e247dd68028d_640.jpg"
+  }
+] 
